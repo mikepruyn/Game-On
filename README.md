@@ -1,6 +1,4 @@
-# Application Name
-
-Rename the above with the name of your application.
+# Game On
 
 # Overview
 
@@ -8,7 +6,10 @@ Add an overview of your application here.
 
 # Team Members
 
-Add the team member names who are working on this application.
+Doris Chan
+Mike Pruyn
+Matt Mill
+Gui Silva
 
 # Application Initialization
 
