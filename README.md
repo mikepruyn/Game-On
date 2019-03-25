@@ -2,14 +2,14 @@
 
 # Overview
 
-Add an overview of your application here.
+The purpose of the app is to provide a meet-up service for people looking for pick-up sports games
 
 # Team Members
 
-Doris Chan
-Mike Pruyn
-Matt Mill
-Gui Silva
+Doris Chan \\
+Mike Pruyn \\
+Matt Mill \\
+Gui Silva \\
 
 # Application Initialization
 
