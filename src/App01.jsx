@@ -1,24 +1,137 @@
-// This is a place holder for the initial application state.
-const state = [
+const Events = [
+  {
+    id: 0,
+    sport: 'Basketball',
+    location: 'Southwest Courts',
+    people_going: 0,
+    date: "2016-08-15",
+    time: '12:20',
+    user_going: false
+  }
 
+  
 ];
 
-// This grabs the DOM element to be used to mount React components.
 var contentNode = document.getElementById("contents");
 
-class MyComponent extends React.Component {
+class EventFilter extends React.Component {
+  render() {
+    return <div>This is a placeholder for the Event Filter.</div>;
+  }
+}
+
+const EventRow = (props) => (
+  <tr>
+    <td>{props.Event.sport}</td>
+    <td>{props.Event.location}</td>
+    <td>{props.Event.date}</td>
+    <td>{props.Event.time}</td>
+    <td>{props.Event.people_going}</td>
+    
+  </tr>
+);
+
+function ChangeUserGoing(){
+  console.log();
+
+  
+}
+
+
+function EventTable(props) {
+  const EventRows = props.Events.map(Event => (
+    <EventRow key={Event.id} Event={Event} />
+  ));
+  return (
+    <table className="bordered-table">
+      <thead>
+        <tr>
+          <th>Sport</th>
+          <th>Location</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Who's Going?</th>
+
+        </tr>
+      </thead>
+      <tbody>{EventRows}</tbody>
+    </table>
+  );
+}
+
+class EventAdd extends React.Component {
   constructor() {
     super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let form = document.forms.EventAdd;
+    this.props.createEvent({
+      
+      sport: form.sport.value,
+      location: form.location.value,
+      date: form.date.value,
+      time: form.time.value,
+      people_going: 0
+    });
+    // Clear the form for the next input.
+    form.sport.value = '';
+    form.location.value = '';
+    form.date.value = '';
+    form.time.value = '';
   }
 
   render() {
     return (
       <div>
-        <h1>My View 01</h1>
+        <form name="EventAdd" onSubmit={this.handleSubmit}>
+          <input type="text" name="sport" placeholder="Sport" />
+          <input type="text" name="location" placeholder="Location" />
+          <input type="date" name="date" placeholder="When?" />
+          <input type="time" name="time" placeholder="When?" />
+          <button>Add</button>
+        </form>
+      </div>
+    );
+  }
+}
+
+class EventList extends React.Component {
+  constructor() {
+    super();
+    this.state = { Events: [] };
+
+    this.createEvent = this.createEvent.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({
+      Events: Events
+    });
+  }
+
+  createEvent(newEvent) {
+    const newEvents = this.state.Events.slice();
+    newEvent.id = this.state.Events.length + 1,
+    newEvents.push(newEvent);
+    this.setState({ Events: newEvents });
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Event Tracker</h1>
+        <EventFilter />
+        <hr />
+        <EventTable Events={this.state.Events} />
+        <hr />
+        <EventAdd createEvent={this.createEvent} />
       </div>
     );
   }
 }
 
 // This renders the JSX component inside the content node:
-ReactDOM.render(<MyComponent />, contentNode);
+ReactDOM.render(<EventList />, contentNode);
