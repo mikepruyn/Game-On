@@ -124,7 +124,6 @@ class ThreadDisplay extends React.Component{
 
   render(){
     return (
-      // Something with all the threads posted
       <div>
         <ThreadList threads = {this.state.threads}/>
         <ThreadCreator createThread={this.createThread}/>
