@@ -182,14 +182,11 @@ var ThreadDisplay = function (_React$Component4) {
   }, {
     key: "render",
     value: function render() {
-      return (
-        // Something with all the threads posted
-        React.createElement(
-          "div",
-          null,
-          React.createElement(ThreadList, { threads: this.state.threads }),
-          React.createElement(ThreadCreator, { createThread: this.createThread })
-        )
+      return React.createElement(
+        "div",
+        null,
+        React.createElement(ThreadList, { threads: this.state.threads }),
+        React.createElement(ThreadCreator, { createThread: this.createThread })
       );
     }
   }]);
