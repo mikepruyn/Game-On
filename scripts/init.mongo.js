@@ -7,13 +7,11 @@ db.threads.remove({});
 
 db.events.insert([
   {
-    id: 0,
     sport: 'Basketball',
     location: 'Southwest Courts',
     people_going: 0,
     date: "2016-08-15",
     time: '12:20',
-    user_going: false
   } 
 ]);
 
