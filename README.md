@@ -9,7 +9,7 @@ The purpose of the app is to provide a meet-up service for people looking for pi
 Doris Chan\
 Mike Pruyn\
 Matt Mill\
-Gui Silva\
+Gui Silva
 
 # Application Initialization
 
