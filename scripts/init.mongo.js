@@ -17,13 +17,10 @@ db.events.insert([
 
 db.profiles.insert([
     {
-      id: 1,
-      
       name: "Doris Chan",
       created: new Date("2016-08-15"),
       interest: "Badminton",
       time: "7PM",
-      title: "Error in console when clicking Add"
     }
   ]);
 
