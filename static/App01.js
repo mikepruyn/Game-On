@@ -201,8 +201,24 @@ var EventList = function (_React$Component3) {
   _createClass(EventList, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this4 = this;
+
       this.setState({
         Events: Events
+      });
+
+      fetch('/api/events ').then(function (response) {
+        if (response.ok) {
+          response.json().then(function (data) {
+            _this4.setState({ Events: data.records });
+          });
+        } else {
+          response.json().then(function (error) {
+            alert("Failed to fetch issues:" + error.message);
+          });
+        }
+      }).catch(function (err) {
+        alert("Error in fetching data from server:", err);
       });
     }
   }, {
