@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -7,16 +7,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Events = [{
-  id: 0,
-  sport: 'Basketball',
-  location: 'Southwest Courts',
-  people_going: 0,
-  date: "2016-08-15",
-  time: '12:20',
-  user_going: false
-}];
 
 var contentNode = document.getElementById("contents");
 
@@ -30,12 +20,12 @@ var EventFilter = function (_React$Component) {
   }
 
   _createClass(EventFilter, [{
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
-        'This is a placeholder for the Event Filter.'
+        "This is a placeholder for the Event Filter."
       );
     }
   }]);
@@ -45,30 +35,30 @@ var EventFilter = function (_React$Component) {
 
 var EventRow = function EventRow(props) {
   return React.createElement(
-    'tr',
+    "tr",
     null,
     React.createElement(
-      'td',
+      "td",
       null,
       props.Event.sport
     ),
     React.createElement(
-      'td',
+      "td",
       null,
       props.Event.location
     ),
     React.createElement(
-      'td',
+      "td",
       null,
       props.Event.date
     ),
     React.createElement(
-      'td',
+      "td",
       null,
       props.Event.time
     ),
     React.createElement(
-      'td',
+      "td",
       null,
       props.Event.people_going
     )
@@ -84,43 +74,43 @@ function EventTable(props) {
     return React.createElement(EventRow, { key: Event.id, Event: Event });
   });
   return React.createElement(
-    'table',
-    { className: 'bordered-table' },
+    "table",
+    { className: "bordered-table" },
     React.createElement(
-      'thead',
+      "thead",
       null,
       React.createElement(
-        'tr',
+        "tr",
         null,
         React.createElement(
-          'th',
+          "th",
           null,
-          'Sport'
+          "Sport"
         ),
         React.createElement(
-          'th',
+          "th",
           null,
-          'Location'
+          "Location"
         ),
         React.createElement(
-          'th',
+          "th",
           null,
-          'Date'
+          "Date"
         ),
         React.createElement(
-          'th',
+          "th",
           null,
-          'Time'
+          "Time"
         ),
         React.createElement(
-          'th',
+          "th",
           null,
-          'Who\'s Going?'
+          "Who's Going?"
         )
       )
     ),
     React.createElement(
-      'tbody',
+      "tbody",
       null,
       EventRows
     )
@@ -140,7 +130,7 @@ var EventAdd = function (_React$Component2) {
   }
 
   _createClass(EventAdd, [{
-    key: 'handleSubmit',
+    key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
       var form = document.forms.EventAdd;
@@ -159,22 +149,22 @@ var EventAdd = function (_React$Component2) {
       form.time.value = '';
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'form',
-          { name: 'EventAdd', onSubmit: this.handleSubmit },
-          React.createElement('input', { type: 'text', name: 'sport', placeholder: 'Sport' }),
-          React.createElement('input', { type: 'text', name: 'location', placeholder: 'Location' }),
-          React.createElement('input', { type: 'date', name: 'date', placeholder: 'When?' }),
-          React.createElement('input', { type: 'time', name: 'time', placeholder: 'When?' }),
+          "form",
+          { name: "EventAdd", onSubmit: this.handleSubmit },
+          React.createElement("input", { type: "text", name: "sport", placeholder: "Sport" }),
+          React.createElement("input", { type: "text", name: "location", placeholder: "Location" }),
+          React.createElement("input", { type: "date", name: "date", placeholder: "When?" }),
+          React.createElement("input", { type: "time", name: "time", placeholder: "When?" }),
           React.createElement(
-            'button',
+            "button",
             null,
-            'Add'
+            "Add"
           )
         )
       );
@@ -199,15 +189,11 @@ var EventList = function (_React$Component3) {
   }
 
   _createClass(EventList, [{
-    key: 'componentDidMount',
+    key: "componentDidMount",
     value: function componentDidMount() {
       var _this4 = this;
 
-      this.setState({
-        Events: Events
-      });
-
-      fetch('/api/events ').then(function (response) {
+      fetch("/api/events ").then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
             _this4.setState({ Events: data.records });
@@ -222,27 +208,27 @@ var EventList = function (_React$Component3) {
       });
     }
   }, {
-    key: 'createEvent',
+    key: "createEvent",
     value: function createEvent(newEvent) {
       var newEvents = this.state.Events.slice();
       newEvent.id = this.state.Events.length + 1, newEvents.push(newEvent);
       this.setState({ Events: newEvents });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
       return React.createElement(
-        'div',
+        "div",
         null,
         React.createElement(
-          'h1',
+          "h1",
           null,
-          'Event Tracker'
+          "Event Tracker"
         ),
         React.createElement(EventFilter, null),
-        React.createElement('hr', null),
+        React.createElement("hr", null),
         React.createElement(EventTable, { Events: this.state.Events }),
-        React.createElement('hr', null),
+        React.createElement("hr", null),
         React.createElement(EventAdd, { createEvent: this.createEvent })
       );
     }

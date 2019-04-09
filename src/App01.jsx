@@ -1,14 +1,3 @@
-const Events = [
-  {
-    id: 0,
-    sport: 'Basketball',
-    location: 'Southwest Courts',
-    people_going: 0,
-    date: "2016-08-15",
-    time: '12:20',
-    user_going: false
-  },
-];
 
 var contentNode = document.getElementById("contents");
 
@@ -105,9 +94,6 @@ class EventList extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      Events: Events
-    });
 
     fetch(`/api/events `).then(response => {
       if (response.ok) {
