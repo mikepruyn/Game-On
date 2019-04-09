@@ -1,4 +1,3 @@
-
 var contentNode = document.getElementById("contents");
 
 class EventFilter extends React.Component {
@@ -111,10 +110,26 @@ class EventList extends React.Component {
   }
 
   createEvent(newEvent) {
-    const newEvents = this.state.Events.slice();
-    newEvent.id = this.state.Events.length + 1,
-    newEvents.push(newEvent);
-    this.setState({ Events: newEvents });
+    fetch('/api/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newEvent),
+    })
+      .then(res => {
+        if (res.ok) {
+          res.json()
+            .then(newEvent => {
+              const newEvents = this.state.Events.concat(newEvent);
+              this.setState({ Events: newEvents });
+            });
+        }
+        else {
+          res.json()
+            .then(error => {
+              alert('Failed to add event: ' + error.message);
+            });
+        }
+      });
   }
 
   render() {

@@ -210,9 +210,24 @@ var EventList = function (_React$Component3) {
   }, {
     key: "createEvent",
     value: function createEvent(newEvent) {
-      var newEvents = this.state.Events.slice();
-      newEvent.id = this.state.Events.length + 1, newEvents.push(newEvent);
-      this.setState({ Events: newEvents });
+      var _this5 = this;
+
+      fetch('/api/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newEvent)
+      }).then(function (res) {
+        if (res.ok) {
+          res.json().then(function (newEvent) {
+            var newEvents = _this5.state.Events.concat(newEvent);
+            _this5.setState({ Events: newEvents });
+          });
+        } else {
+          res.json().then(function (error) {
+            alert('Failed to add event: ' + error.message);
+          });
+        }
+      });
     }
   }, {
     key: "render",
