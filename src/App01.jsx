@@ -7,9 +7,7 @@ const Events = [
     date: "2016-08-15",
     time: '12:20',
     user_going: false
-  }
-
-  
+  },
 ];
 
 var contentNode = document.getElementById("contents");
@@ -109,6 +107,20 @@ class EventList extends React.Component {
   componentDidMount() {
     this.setState({
       Events: Events
+    });
+
+    fetch(`/api/events `).then(response => {
+      if (response.ok) {
+        response.json().then(data => {
+          this.setState({ Events: data.records });
+        });
+      } else {
+        response.json().then(error => {
+          alert("Failed to fetch issues:" + error.message)
+        });
+      }
+    }).catch(err => {
+      alert("Error in fetching data from server:", err);
     });
   }
 
