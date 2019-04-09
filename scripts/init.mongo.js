@@ -23,21 +23,3 @@ db.profiles.insert([
       time: "7PM",
     }
   ]);
-
-db.threads.insert([
-    {
-    title: "Thread One Title",
-    body: "Desription of the thread topic",
-    replies: [
-        "Test reply 1",
-        "Test reply 2"
-    ]
-    },
-    {
-        title: "Thread Two Title",
-        body: "Yet another description of thread topic",
-        replies: [
-          "And another reply for this thread"
-        ]
-      }
-    ]);
