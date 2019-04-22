@@ -23,9 +23,9 @@ var EventFilter = function (_React$Component) {
     key: "render",
     value: function render() {
       return React.createElement(
-        "div",
-        null,
-        "This is a placeholder for the Event Filter."
+        "a",
+        { href: "view02.html" },
+        "Profile"
       );
     }
   }]);
