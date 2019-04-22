@@ -233,13 +233,9 @@ var IssueList = function (_React$Component4) {
   }, {
     key: "loadData",
     value: function loadData() {
-      var _this5 = this;
-
-      setTimeout(function () {
-        _this5.setState({
-          issues: issues
-        });
-      }, 500);
+      this.setState({
+        issues: issues
+      });
     }
   }, {
     key: "createIssue",

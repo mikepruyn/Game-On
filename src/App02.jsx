@@ -145,11 +145,9 @@ class IssueList extends React.Component {
   }
 
   loadData() {
-    setTimeout(() => {
-      this.setState({
-        issues: issues
-      });
-    }, 500);
+    this.setState({
+      issues: issues
+    });
   }
 
   createIssue(newIssue) {
