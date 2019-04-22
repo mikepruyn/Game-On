@@ -2,7 +2,7 @@ var contentNode = document.getElementById("contents");
 
 class EventFilter extends React.Component {
   render() {
-    return <div>This is a placeholder for the Event Filter.</div>;
+    return <a href='view02.html'>Profile</a>;
   }
 }
 
