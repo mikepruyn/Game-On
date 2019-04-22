@@ -176,6 +176,7 @@ class IssueList extends React.Component {
         
         <div style = {{display:"inline-block"}}>
         <NameTable issues = {this.state.issues}/>
+        
         <IssueFilter issues = {this.state.issues}/>
         </div>
         <hr />
@@ -183,6 +184,7 @@ class IssueList extends React.Component {
         <hr />
         <IssueAdd createIssue={this.createIssue} />
         <IssueAdd2 createIssue= {this.createIssue}/>
+        <a href='index.html'>Back to Events Page</a>
       </div>
     );
   }
