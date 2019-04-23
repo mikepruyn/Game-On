@@ -36,7 +36,7 @@ function EventTable(props) {
           <th>Location</th>
           <th>Date</th>
           <th>Time</th>
-          <th>Who's Going?</th>
+          
 
         </tr>
       </thead>
