@@ -12,7 +12,6 @@ const EventRow = (props) => (
     <td>{props.Event.location}</td>
     <td>{props.Event.date}</td>
     <td>{props.Event.time}</td>
-    <td>{props.Event.people_going}</td>
     
   </tr>
 );
@@ -36,7 +35,6 @@ function EventTable(props) {
           <th>Location</th>
           <th>Date</th>
           <th>Time</th>
-          
 
         </tr>
       </thead>
