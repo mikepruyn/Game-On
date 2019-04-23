@@ -93,7 +93,6 @@ class EventList extends React.Component {
   }
 
   componentDidMount() {
-
     fetch(`/api/events `).then(response => {
       if (response.ok) {
         response.json().then(data => {
