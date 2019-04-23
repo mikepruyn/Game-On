@@ -56,11 +56,6 @@ var EventRow = function EventRow(props) {
       "td",
       null,
       props.Event.time
-    ),
-    React.createElement(
-      "td",
-      null,
-      props.Event.people_going
     )
   );
 };
@@ -101,11 +96,6 @@ function EventTable(props) {
           "th",
           null,
           "Time"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Who's Going?"
         )
       )
     ),
