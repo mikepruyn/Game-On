@@ -101,11 +101,6 @@ function EventTable(props) {
           "th",
           null,
           "Time"
-        ),
-        React.createElement(
-          "th",
-          null,
-          "Who's Going?"
         )
       )
     ),
