@@ -257,9 +257,23 @@ var IssueList = function (_React$Component4) {
         "div",
         null,
         React.createElement(
-          "h1",
-          null,
-          "Profile"
+          "nav",
+          { className: "navbar navbar-expand-lg navbar-dark bg-dark" },
+          React.createElement(
+            "a",
+            { className: "navbar-brand", href: "index.html" },
+            "Game On!"
+          ),
+          React.createElement(
+            "a",
+            { className: "nav-link", href: "index.html" },
+            "Events"
+          ),
+          React.createElement(
+            "a",
+            { className: "nav-link", href: "view02.html" },
+            "Profile"
+          )
         ),
         React.createElement(
           "div",
