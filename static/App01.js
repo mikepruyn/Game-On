@@ -226,9 +226,23 @@ var EventList = function (_React$Component3) {
         "div",
         null,
         React.createElement(
-          "h1",
-          null,
-          "Event Tracker"
+          "nav",
+          { className: "navbar navbar-expand-lg navbar-dark bg-dark" },
+          React.createElement(
+            "a",
+            { className: "navbar-brand", href: "index.html" },
+            "Game On!"
+          ),
+          React.createElement(
+            "a",
+            { className: "nav-link", href: "index.html" },
+            "Events"
+          ),
+          React.createElement(
+            "a",
+            { className: "nav-link", href: "view02.html" },
+            "Profile"
+          )
         ),
         React.createElement(EventFilter, null),
         React.createElement("hr", null),

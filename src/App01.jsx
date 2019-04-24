@@ -132,7 +132,13 @@ class EventList extends React.Component {
   render() {
     return (
       <div>
-        <h1>Event Tracker</h1>
+        
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="index.html">Game On!</a>
+          <a className="nav-link" href="index.html">Events</a>
+          <a className="nav-link" href="view02.html">Profile</a>
+          </nav>
+        
         <EventFilter />
         <hr />
         <EventTable Events={this.state.Events} />
