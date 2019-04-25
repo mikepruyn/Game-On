@@ -167,7 +167,13 @@ class IssueList extends React.Component {
   render() {
     return (
       <div>
-        <h1>Profile</h1>
+        
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a className="navbar-brand" href="index.html">Game On!</a>
+          <a className="nav-link" href="index.html">Events</a>
+          <a className="nav-link" href="view02.html">Profile</a>
+          </nav>
+        
         <div style={{display: "inline-block" }}>
         <img src = "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653" height = "140" width = "160"></img>
         </div>
