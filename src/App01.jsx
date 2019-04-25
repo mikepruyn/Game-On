@@ -28,7 +28,7 @@ function EventTable(props) {
     <EventRow key={Event.id} Event={Event} />
   ));
   return (
-    <table className="bordered-table">
+    <table className="bordered-table" className="w-50 p-4" className="mx-auto" >
       <thead>
         <tr>
           <th>Sport</th>
