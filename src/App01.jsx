@@ -28,7 +28,7 @@ function EventTable(props) {
     <EventRow key={Event.id} Event={Event} />
   ));
   return (
-    <table className="bordered-table">
+    <table className="bordered-table" className="w-50 p-4" className="mx-auto" >
       <thead>
         <tr>
           <th>Sport</th>
@@ -139,8 +139,8 @@ class EventList extends React.Component {
           <a className="nav-link" href="view02.html">Profile</a>
           </nav>
         
-        <EventFilter />
-        <hr />
+        
+        
         <EventTable Events={this.state.Events} />
         <hr />
         <EventAdd createEvent={this.createEvent} />

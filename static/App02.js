@@ -290,12 +290,7 @@ var IssueList = function (_React$Component4) {
         React.createElement(IssueTable, { issues: this.state.issues }),
         React.createElement("hr", null),
         React.createElement(IssueAdd, { createIssue: this.createIssue }),
-        React.createElement(IssueAdd2, { createIssue: this.createIssue }),
-        React.createElement(
-          "a",
-          { href: "index.html" },
-          "Back to Events Page"
-        )
+        React.createElement(IssueAdd2, { createIssue: this.createIssue })
       );
     }
   }]);

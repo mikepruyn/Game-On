@@ -188,7 +188,7 @@ class IssueList extends React.Component {
         <hr />
         <IssueAdd createIssue={this.createIssue} />
         <IssueAdd2 createIssue= {this.createIssue}/>
-        <a href='index.html'>Back to Events Page</a>
+        
       </div>
     );
   }
