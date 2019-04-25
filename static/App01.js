@@ -248,8 +248,6 @@ var EventList = function (_React$Component3) {
             "Profile"
           )
         ),
-        React.createElement(EventFilter, null),
-        React.createElement("hr", null),
         React.createElement(EventTable, { Events: this.state.Events }),
         React.createElement("hr", null),
         React.createElement(EventAdd, { createEvent: this.createEvent })

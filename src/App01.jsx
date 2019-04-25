@@ -139,8 +139,8 @@ class EventList extends React.Component {
           <a className="nav-link" href="view02.html">Profile</a>
           </nav>
         
-        <EventFilter />
-        <hr />
+        
+        
         <EventTable Events={this.state.Events} />
         <hr />
         <EventAdd createEvent={this.createEvent} />
