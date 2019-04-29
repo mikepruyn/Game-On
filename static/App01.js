@@ -152,7 +152,7 @@ var EventAdd = function (_React$Component2) {
         ),
         React.createElement(
           "div",
-          { className: "dropdown-menu", "aria-labelledby": "dropdownMenu2" },
+          { className: "dropdown-menu dropdown-menu-right", "aria-labelledby": "dropdownMenu2" },
           React.createElement(
             "form",
             { className: "px-4 py-3", name: "EventAdd", onSubmit: this.handleSubmit },
@@ -281,7 +281,11 @@ var EventList = function (_React$Component3) {
             React.createElement("i", { className: "fas fa-user-alt" }),
             " Profile"
           ),
-          React.createElement(EventAdd, { createEvent: this.createEvent })
+          React.createElement(
+            "div",
+            { className: "navbar-nav ml-auto" },
+            React.createElement(EventAdd, { createEvent: this.createEvent })
+          )
         ),
         React.createElement(EventTable, { Events: this.state.Events }),
         React.createElement("hr", null)

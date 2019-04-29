@@ -73,7 +73,7 @@ class EventAdd extends React.Component {
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i className="far fa-calendar-plus"></i> Add an Event
         </button>
-        <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
           <form className="px-4 py-3" name="EventAdd" onSubmit={this.handleSubmit}>
             <div className="form-row">
               <div>
@@ -149,7 +149,9 @@ class EventList extends React.Component {
             <a className="navbar-brand" href="index.html">Game On!</a>
             <a className="nav-link" href="index.html"><i className="far fa-calendar-alt"></i> Events</a>
             <a className="nav-link" href="view02.html"><i className="fas fa-user-alt"></i> Profile</a>
-            <EventAdd createEvent={this.createEvent} />
+            <div className="navbar-nav ml-auto">
+              <EventAdd createEvent={this.createEvent} />
+            </div>
           </nav>
         <EventTable Events={this.state.Events} />
         <hr />
