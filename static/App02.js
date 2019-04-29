@@ -42,23 +42,37 @@ var IssueFilter = function (_React$Component) {
 var IssueRow = function IssueRow(props) {
   return React.createElement(
     "table",
-    null,
+    { className: "table", width: "5%" },
     React.createElement(
-      "tr",
+      "thead",
       null,
       React.createElement(
-        "td",
-        null,
-        props.issue.interest
+        "th",
+        { width: "12%" },
+        "Favorite Sport"
+      ),
+      React.createElement(
+        "th",
+        { width: "12%" },
+        "Time Available"
       )
     ),
     React.createElement(
-      "tr",
+      "tbody",
       null,
       React.createElement(
-        "td",
+        "tr",
         null,
-        props.issue.time
+        React.createElement(
+          "td",
+          null,
+          props.issue.interest
+        ),
+        React.createElement(
+          "td",
+          null,
+          props.issue.time
+        )
       )
     )
   );
@@ -283,14 +297,17 @@ var IssueList = function (_React$Component4) {
           React.createElement("img", { src: "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653", height: "140", width: "160", className: "rounded" })
         ),
         React.createElement(
-          "div",
-          { style: { display: "inline-block" } },
-          React.createElement(NameTable, { issues: this.state.issues }),
-          React.createElement(IssueFilter, { issues: this.state.issues })
+          "h1",
+          null,
+          "Doris Chan"
+        ),
+        React.createElement(
+          "h4",
+          null,
+          "Junior"
         ),
         React.createElement("hr", null),
         React.createElement(IssueTable, { issues: this.state.issues }),
-        React.createElement("hr", null),
         React.createElement(IssueAdd, { createIssue: this.createIssue }),
         React.createElement(IssueAdd2, { createIssue: this.createIssue })
       );

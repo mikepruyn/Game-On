@@ -20,9 +20,19 @@ class IssueFilter extends React.Component {
 
 
 let IssueRow = (props) => (
-  <table>
-    <tr><td>{props.issue.interest}</td></tr>
-    <tr><td>{props.issue.time}</td></tr>
+  <table className='table-responsive' width="5%">
+    <thead>
+      <th>Favorite Sport</th>
+      <th>Time Available</th>
+      
+    </thead>
+    <tbody>
+      <tr>
+        <td >{props.issue.interest}</td>
+        <td>{props.issue.time}</td>
+      </tr>
+    </tbody>
+    
   </table>
 );
 
@@ -172,15 +182,11 @@ class IssueList extends React.Component {
         <div style={{display: "inline-block" }}>
         <img src = "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653" height = "140" width = "160" className="rounded"></img>
         </div>
+        <h1>Doris Chan</h1>
+        <h4>Junior</h4>
         
-        <div style = {{display:"inline-block"}}>
-        <NameTable issues = {this.state.issues}/>
-        
-        <IssueFilter issues = {this.state.issues}/>
-        </div>
-        <hr />
         <IssueTable issues={this.state.issues} />
-        <hr />
+       
         <IssueAdd createIssue={this.createIssue} />
         <IssueAdd2 createIssue= {this.createIssue}/>
         
