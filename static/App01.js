@@ -147,7 +147,8 @@ var EventAdd = function (_React$Component2) {
         React.createElement(
           "button",
           { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenu2", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" },
-          "Add an Event"
+          React.createElement("i", { className: "far fa-calendar-plus" }),
+          " Add an Event"
         ),
         React.createElement(
           "div",
@@ -164,19 +165,22 @@ var EventAdd = function (_React$Component2) {
                 React.createElement(
                   "label",
                   null,
-                  "Sport"
+                  React.createElement("i", { className: "fas fa-running" }),
+                  " Sport"
                 ),
                 React.createElement("input", { className: "form-control", type: "text", name: "sport", placeholder: "Sport" }),
                 React.createElement(
                   "label",
                   null,
-                  "Where?"
+                  React.createElement("i", { className: "fas fa-map-marker-alt" }),
+                  " Where?"
                 ),
                 React.createElement("input", { className: "form-control", type: "text", name: "location", placeholder: "Location" }),
                 React.createElement(
                   "label",
                   null,
-                  "When?"
+                  React.createElement("i", { className: "fas fa-clock" }),
+                  " When?"
                 ),
                 React.createElement("input", { className: "form-control", type: "date", name: "date", placeholder: "When?" }),
                 React.createElement("input", { className: "form-control", type: "time", name: "time", placeholder: "When?" })
@@ -268,12 +272,14 @@ var EventList = function (_React$Component3) {
           React.createElement(
             "a",
             { className: "nav-link", href: "index.html" },
-            "Events"
+            React.createElement("i", { className: "far fa-calendar-alt" }),
+            " Events"
           ),
           React.createElement(
             "a",
             { className: "nav-link", href: "view02.html" },
-            "Profile"
+            React.createElement("i", { className: "fas fa-user-alt" }),
+            " Profile"
           ),
           React.createElement(EventAdd, { createEvent: this.createEvent })
         ),

@@ -71,17 +71,17 @@ class EventAdd extends React.Component {
     return (
       <div className="dropdown">
         <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Add an Event
+        <i className="far fa-calendar-plus"></i> Add an Event
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
           <form className="px-4 py-3" name="EventAdd" onSubmit={this.handleSubmit}>
             <div className="form-row">
               <div>
-                <label>Sport</label>
+                <label><i className="fas fa-running"></i> Sport</label>
                 <input className="form-control" type="text" name="sport" placeholder="Sport" />
-                <label>Where?</label>
+                <label><i className="fas fa-map-marker-alt"></i > Where?</label>
                 <input className="form-control" type="text" name="location" placeholder="Location" />  
-                <label>When?</label>
+                <label><i className="fas fa-clock"></i> When?</label>
                 <input className="form-control" type="date" name="date" placeholder="When?" />
                 <input className="form-control" type="time" name="time" placeholder="When?" /> 
               </div>
@@ -147,8 +147,8 @@ class EventList extends React.Component {
       <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <a className="navbar-brand" href="index.html">Game On!</a>
-            <a className="nav-link" href="index.html">Events</a>
-            <a className="nav-link" href="view02.html">Profile</a>
+            <a className="nav-link" href="index.html"><i className="far fa-calendar-alt"></i> Events</a>
+            <a className="nav-link" href="view02.html"><i className="fas fa-user-alt"></i> Profile</a>
             <EventAdd createEvent={this.createEvent} />
           </nav>
         <EventTable Events={this.state.Events} />
