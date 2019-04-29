@@ -10,22 +10,22 @@ db.events.insert([
     sport: 'Basketball',
     location: 'Southwest Courts',
     people_going: 0,
-    date: "2016-08-15",
+    date: "2018-10-15",
     time: '12:20',
   },
   {
-    sport: 'Basketball',
-    location: 'Southwest Courts',
+    sport: 'Soccer',
+    location: 'Mullins Center Fields',
     people_going: 0,
-    date: "2016-08-15",
-    time: '12:20',
+    date: "2019-1-05",
+    time: '5:30',
   },
   {
-    sport: 'Basketball',
-    location: 'Southwest Courts',
+    sport: 'Volleyball',
+    location: 'Boyden Gym',
     people_going: 0,
-    date: "2016-08-15",
-    time: '12:20',
+    date: "2019-05-23",
+    time: '8:15',
   }
 ]);
 
