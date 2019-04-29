@@ -28,7 +28,7 @@ function EventTable(props) {
     <EventRow key={Event.id} Event={Event} />
   ));
   return (
-    <table className="bordered-table" className="w-50 p-4" className="mx-auto" >
+    <table className="table table-striped" >
       <thead>
         <tr>
           <th>Sport</th>
@@ -69,15 +69,28 @@ class EventAdd extends React.Component {
 
   render() {
     return (
-      <div>
-        <form name="EventAdd" onSubmit={this.handleSubmit}>
-          <input type="text" name="sport" placeholder="Sport" />
-          <input type="text" name="location" placeholder="Location" />
-          <input type="date" name="date" placeholder="When?" />
-          <input type="time" name="time" placeholder="When?" />
-          <button>Add</button>
-        </form>
+      <div className="dropdown">
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i className="far fa-calendar-plus"></i> Add an Event
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <form className="px-4 py-3" name="EventAdd" onSubmit={this.handleSubmit}>
+            <div className="form-row">
+              <div>
+                <label><i className="fas fa-running"></i> Sport</label>
+                <input className="form-control" type="text" name="sport" placeholder="Sport" />
+                <label><i className="fas fa-map-marker-alt"></i > Where?</label>
+                <input className="form-control" type="text" name="location" placeholder="Location" />  
+                <label><i className="fas fa-clock"></i> When?</label>
+                <input className="form-control" type="date" name="date" placeholder="When?" />
+                <input className="form-control" type="time" name="time" placeholder="When?" /> 
+              </div>
+            </div>
+            <button type="submit" className="btn btn-primary" >Add</button>
+          </form>
+        </div>
       </div>
+      
     );
   }
 }
@@ -132,18 +145,15 @@ class EventList extends React.Component {
   render() {
     return (
       <div>
-        
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="index.html">Game On!</a>
-          <a className="nav-link" href="index.html">Events</a>
-          <a className="nav-link" href="view02.html">Profile</a>
+            <a className="navbar-brand" href="index.html">Game On!</a>
+            <a className="nav-link" href="index.html"><i className="far fa-calendar-alt"></i> Events</a>
+            <a className="nav-link" href="view02.html"><i className="fas fa-user-alt"></i> Profile</a>
+            <EventAdd createEvent={this.createEvent} />
           </nav>
-        
-        
-        
         <EventTable Events={this.state.Events} />
         <hr />
-        <EventAdd createEvent={this.createEvent} />
+        
       </div>
     );
   }

@@ -2,8 +2,6 @@
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -67,14 +65,12 @@ function ChangeUserGoing() {
 }
 
 function EventTable(props) {
-  var _React$createElement;
-
   var EventRows = props.Events.map(function (Event) {
     return React.createElement(EventRow, { key: Event.id, Event: Event });
   });
   return React.createElement(
     "table",
-    (_React$createElement = { className: "bordered-table" }, _defineProperty(_React$createElement, "className", "w-50 p-4"), _defineProperty(_React$createElement, "className", "mx-auto"), _React$createElement),
+    { className: "table table-striped" },
     React.createElement(
       "thead",
       null,
@@ -147,18 +143,54 @@ var EventAdd = function (_React$Component2) {
     value: function render() {
       return React.createElement(
         "div",
-        null,
+        { className: "dropdown" },
         React.createElement(
-          "form",
-          { name: "EventAdd", onSubmit: this.handleSubmit },
-          React.createElement("input", { type: "text", name: "sport", placeholder: "Sport" }),
-          React.createElement("input", { type: "text", name: "location", placeholder: "Location" }),
-          React.createElement("input", { type: "date", name: "date", placeholder: "When?" }),
-          React.createElement("input", { type: "time", name: "time", placeholder: "When?" }),
+          "button",
+          { className: "btn btn-secondary dropdown-toggle", type: "button", id: "dropdownMenu2", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false" },
+          React.createElement("i", { className: "far fa-calendar-plus" }),
+          " Add an Event"
+        ),
+        React.createElement(
+          "div",
+          { className: "dropdown-menu", "aria-labelledby": "dropdownMenu2" },
           React.createElement(
-            "button",
-            null,
-            "Add"
+            "form",
+            { className: "px-4 py-3", name: "EventAdd", onSubmit: this.handleSubmit },
+            React.createElement(
+              "div",
+              { className: "form-row" },
+              React.createElement(
+                "div",
+                null,
+                React.createElement(
+                  "label",
+                  null,
+                  React.createElement("i", { className: "fas fa-running" }),
+                  " Sport"
+                ),
+                React.createElement("input", { className: "form-control", type: "text", name: "sport", placeholder: "Sport" }),
+                React.createElement(
+                  "label",
+                  null,
+                  React.createElement("i", { className: "fas fa-map-marker-alt" }),
+                  " Where?"
+                ),
+                React.createElement("input", { className: "form-control", type: "text", name: "location", placeholder: "Location" }),
+                React.createElement(
+                  "label",
+                  null,
+                  React.createElement("i", { className: "fas fa-clock" }),
+                  " When?"
+                ),
+                React.createElement("input", { className: "form-control", type: "date", name: "date", placeholder: "When?" }),
+                React.createElement("input", { className: "form-control", type: "time", name: "time", placeholder: "When?" })
+              )
+            ),
+            React.createElement(
+              "button",
+              { type: "submit", className: "btn btn-primary" },
+              "Add"
+            )
           )
         )
       );
@@ -240,17 +272,19 @@ var EventList = function (_React$Component3) {
           React.createElement(
             "a",
             { className: "nav-link", href: "index.html" },
-            "Events"
+            React.createElement("i", { className: "far fa-calendar-alt" }),
+            " Events"
           ),
           React.createElement(
             "a",
             { className: "nav-link", href: "view02.html" },
-            "Profile"
-          )
+            React.createElement("i", { className: "fas fa-user-alt" }),
+            " Profile"
+          ),
+          React.createElement(EventAdd, { createEvent: this.createEvent })
         ),
         React.createElement(EventTable, { Events: this.state.Events }),
-        React.createElement("hr", null),
-        React.createElement(EventAdd, { createEvent: this.createEvent })
+        React.createElement("hr", null)
       );
     }
   }]);

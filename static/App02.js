@@ -32,11 +32,7 @@ var IssueFilter = function (_React$Component) {
   _createClass(IssueFilter, [{
     key: "render",
     value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        "Junior"
-      );
+      return React.createElement("div", null);
     }
   }]);
 
@@ -89,14 +85,18 @@ function NameTable(props) {
     "table",
     null,
     React.createElement(
-      "thead",
-      null,
-      React.createElement("tr", null)
-    ),
-    React.createElement(
       "tbody",
       null,
       issueRows
+    ),
+    React.createElement(
+      "tr",
+      null,
+      React.createElement(
+        "td",
+        null,
+        "Junior"
+      )
     )
   );
 }
@@ -108,7 +108,7 @@ function IssueTable(props) {
 
   return React.createElement(
     "table",
-    null,
+    { className: "table table-striped" },
     issueRows
   );
 }
@@ -267,18 +267,20 @@ var IssueList = function (_React$Component4) {
           React.createElement(
             "a",
             { className: "nav-link", href: "index.html" },
-            "Events"
+            React.createElement("i", { className: "far fa-calendar-alt" }),
+            " Events"
           ),
           React.createElement(
             "a",
             { className: "nav-link", href: "view02.html" },
-            "Profile"
+            React.createElement("i", { className: "fas fa-user-alt" }),
+            " Profile"
           )
         ),
         React.createElement(
           "div",
           { style: { display: "inline-block" } },
-          React.createElement("img", { src: "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653", height: "140", width: "160" })
+          React.createElement("img", { src: "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653", height: "140", width: "160", className: "rounded" })
         ),
         React.createElement(
           "div",

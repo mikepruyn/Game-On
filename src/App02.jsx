@@ -14,7 +14,7 @@ var contentNode = document.getElementById("contents");
 
 class IssueFilter extends React.Component {
   render() {
-    return <div>Junior</div>;
+    return <div></div>;
   }
 }
 
@@ -43,14 +43,9 @@ function NameTable(props){
   
   
   return (
-    <table >
-      <thead>
-        <tr>
-          
-         
-        </tr>
-      </thead>
+    <table>
       <tbody>{issueRows}</tbody>
+      <tr><td>Junior</td></tr>
     </table>
   );
 }
@@ -62,7 +57,7 @@ function IssueTable(props) {
 
 
   return (
-    <table>{issueRows}</table>
+    <table className="table table-striped">{issueRows}</table>
   );
 }
 
@@ -170,12 +165,12 @@ class IssueList extends React.Component {
         
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <a className="navbar-brand" href="index.html">Game On!</a>
-          <a className="nav-link" href="index.html">Events</a>
-          <a className="nav-link" href="view02.html">Profile</a>
+          <a className="nav-link" href="index.html"><i className="far fa-calendar-alt"></i> Events</a>
+            <a className="nav-link" href="view02.html"><i className="fas fa-user-alt"></i> Profile</a>
           </nav>
         
         <div style={{display: "inline-block" }}>
-        <img src = "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653" height = "140" width = "160"></img>
+        <img src = "https://vignette.wikia.nocookie.net/onepunchman/images/7/70/Child_Emperor_%26_Pig_God_vs._Eyesight.png/revision/latest?cb=20180601180653" height = "140" width = "160" className="rounded"></img>
         </div>
         
         <div style = {{display:"inline-block"}}>
